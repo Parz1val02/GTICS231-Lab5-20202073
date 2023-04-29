@@ -24,8 +24,15 @@
         <li class="nav-item" >
           <a class="nav-link btn btn-info" th:href="@{/historial}">Historial</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link btn btn-success" th:href="@{/reportes}">Reportes</a>
+        <li class="btn-group nav-item">
+          <button type="button" class="btn btn-success dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+            Reportes
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/reportes/salario}">Salario</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" th:href="@{/reportes/aumento}">Tentativa aumento</a></li>
+          </ul>
         </li>
       </ul>
     </div>
