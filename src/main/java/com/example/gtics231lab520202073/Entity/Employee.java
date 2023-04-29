@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -33,17 +35,16 @@ public class Employee {
     private String phoneNumber;
 
     @Column(name = "hire_date", nullable = false)
-    private Instant hireDate;
+    private LocalDateTime hireDate;
 
     @ManyToOne
     @JoinColumn(name = "job_id", nullable = false)
     private Job job;
 
-    @Column(name = "salary", precision = 8, scale = 2)
-    private BigDecimal salary;
-
-    @Column(name = "commission_pct", precision = 2, scale = 2)
-    private BigDecimal commissionPct;
+    @Column(name = "salary")
+    private Double salary;
+    @Column(name = "commission_pct")
+    private Double commissionPct;
 
     @ManyToOne
     @JoinColumn(name = "manager_id")
