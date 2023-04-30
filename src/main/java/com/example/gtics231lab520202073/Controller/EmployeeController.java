@@ -68,9 +68,11 @@ public class EmployeeController {
     }
     @PostMapping("/buscar")
     public String Buscar(@RequestParam("searchField") String searchField, Model model){
+        String searchField_s=searchField;
+        searchField = searchField.toLowerCase();
         List<EmpleadoDTO> lista = employeeRepository.buscarEmpleado(searchField);
         model.addAttribute("listaEmpleados", lista);
-        model.addAttribute("filtro", searchField);
+        model.addAttribute("filtro", searchField_s);
         return "empleados/Empleados Totales";
     }
     @GetMapping("/borrar")
